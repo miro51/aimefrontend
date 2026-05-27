@@ -5,12 +5,26 @@ import SimulationView from '../views/SimulationView.vue'
 import SimulationRunView from '../views/SimulationRunView.vue'
 import ReportView from '../views/ReportView.vue'
 import InteractionView from '../views/InteractionView.vue'
+import Onboarding from '../views/Onboarding.vue'
 
 const routes = [
   {
+    path: '/setup',
+    name: 'Onboarding',
+    component: Onboarding
+  },
+  {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    beforeEnter: (to, from, next) => {
+      const creds = localStorage.getItem('aime_credentials')
+      if (!creds) {
+        next('/setup')
+      } else {
+        next()
+      }
+    }
   },
   {
     path: '/process/:projectId',
