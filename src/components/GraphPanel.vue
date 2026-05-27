@@ -286,7 +286,7 @@ const entityTypes = computed(() => {
   if (!props.graphData?.nodes) return []
   const typeMap = {}
   // 美观的颜色调色板
-  const colors = ['#FF6B35', '#004E89', '#7B2D8E', '#1A936F', '#C5283D', '#E9724C', '#3498db', '#9b59b6', '#27ae60', '#f39c12']
+  const colors = ['#00ffcc', '#C9A84C', '#00bfff', '#7fff00', '#ff6b9d', '#ff9f43', '#a29bfe', '#fd79a8', '#55efc4', '#fdcb6e']
   
   props.graphData.nodes.forEach(node => {
     const type = node.labels?.find(l => l !== 'Entity') || 'Entity'
@@ -338,6 +338,58 @@ const renderGraph = () => {
   const height = container.clientHeight
   
   const svg = d3.select(graphSvg.value)
+
+  // Add circuit board pattern
+  const defs = svg.append('defs')
+  
+  // Glow filter for nodes
+  const glowFilter = defs.append('filter').attr('id', 'glow')
+  glowFilter.append('feGaussianBlur').attr('stdDeviation', '3').attr('result', 'coloredBlur')
+  const feMerge = glowFilter.append('feMerge')
+  feMerge.append('feMergeNode').attr('in', 'coloredBlur')
+  feMerge.append('feMergeNode').attr('in', 'SourceGraphic')
+
+  // Gold glow filter for selected
+  const goldFilter = defs.append('filter').attr('id', 'goldGlow')
+  goldFilter.append('feGaussianBlur').attr('stdDeviation', '4').attr('result', 'coloredBlur')
+  const feMerge2 = goldFilter.append('feMerge')
+  feMerge2.append('feMergeNode').attr('in', 'coloredBlur')
+  feMerge2.append('feMergeNode').attr('in', 'SourceGraphic')
+
+  // Circuit board pattern
+  const pattern = defs.append('pattern')
+    .attr('id', 'circuit')
+    .attr('x', 0).attr('y', 0)
+    .attr('width', 80).attr('height', 80)
+    .attr('patternUnits', 'userSpaceOnUse')
+  
+  pattern.append('rect').attr('width', 80).attr('height', 80).attr('fill', '#050d13')
+  
+  // Horizontal lines
+  pattern.append('line').attr('x1', 0).attr('y1', 20).attr('x2', 80).attr('y2', 20)
+    .attr('stroke', 'rgba(0,255,200,0.06)').attr('stroke-width', 1)
+  pattern.append('line').attr('x1', 0).attr('y1', 60).attr('x2', 80).attr('y2', 60)
+    .attr('stroke', 'rgba(0,255,200,0.06)').attr('stroke-width', 1)
+  // Vertical lines
+  pattern.append('line').attr('x1', 20).attr('y1', 0).attr('x2', 20).attr('y2', 80)
+    .attr('stroke', 'rgba(0,255,200,0.06)').attr('stroke-width', 1)
+  pattern.append('line').attr('x1', 60).attr('y1', 0).attr('x2', 60).attr('y2', 80)
+    .attr('stroke', 'rgba(0,255,200,0.06)').attr('stroke-width', 1)
+  // Corner dots
+  pattern.append('circle').attr('cx', 20).attr('cy', 20).attr('r', 1.5)
+    .attr('fill', 'rgba(0,255,200,0.15)')
+  pattern.append('circle').attr('cx', 60).attr('cy', 20).attr('r', 1.5)
+    .attr('fill', 'rgba(0,255,200,0.15)')
+  pattern.append('circle').attr('cx', 20).attr('cy', 60).attr('r', 1.5)
+    .attr('fill', 'rgba(0,255,200,0.15)')
+  pattern.append('circle').attr('cx', 60).attr('cy', 60).attr('r', 1.5)
+    .attr('fill', 'rgba(0,255,200,0.15)')
+
+  // Background rect with circuit pattern
+  svg.append('rect')
+    .attr('width', width)
+    .attr('height', height)
+    .attr('fill', 'url(#circuit)')
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox', `0 0 ${width} ${height}`)
@@ -578,9 +630,9 @@ const renderGraph = () => {
     .on('click', (event, d) => {
       event.stopPropagation()
       // 重置之前选中边的样式
-      linkGroup.selectAll('path').attr('stroke', '#C0C0C0').attr('stroke-width', 1.5)
-      linkLabelBg.attr('fill', 'rgba(255,255,255,0.95)')
-      linkLabels.attr('fill', '#666')
+      linkGroup.selectAll('path').attr('stroke', 'rgba(0,255,200,0.4)').attr('stroke-width', 1.5)
+      linkLabelBg.attr('fill', 'rgba(0,20,30,0.85)')
+      linkLabels.attr('fill', '#00ffcc')
       // 高亮当前选中的边
       d3.select(event.target).attr('stroke', '#3498db').attr('stroke-width', 3)
       
@@ -602,9 +654,9 @@ const renderGraph = () => {
     .style('display', showEdgeLabels.value ? 'block' : 'none')
     .on('click', (event, d) => {
       event.stopPropagation()
-      linkGroup.selectAll('path').attr('stroke', '#C0C0C0').attr('stroke-width', 1.5)
-      linkLabelBg.attr('fill', 'rgba(255,255,255,0.95)')
-      linkLabels.attr('fill', '#666')
+      linkGroup.selectAll('path').attr('stroke', 'rgba(0,255,200,0.4)').attr('stroke-width', 1.5)
+      linkLabelBg.attr('fill', 'rgba(0,20,30,0.85)')
+      linkLabels.attr('fill', '#00ffcc')
       // 高亮对应的边
       link.filter(l => l === d).attr('stroke', '#3498db').attr('stroke-width', 3)
       d3.select(event.target).attr('fill', 'rgba(52, 152, 219, 0.1)')
@@ -630,9 +682,9 @@ const renderGraph = () => {
     .style('display', showEdgeLabels.value ? 'block' : 'none')
     .on('click', (event, d) => {
       event.stopPropagation()
-      linkGroup.selectAll('path').attr('stroke', '#C0C0C0').attr('stroke-width', 1.5)
-      linkLabelBg.attr('fill', 'rgba(255,255,255,0.95)')
-      linkLabels.attr('fill', '#666')
+      linkGroup.selectAll('path').attr('stroke', 'rgba(0,255,200,0.4)').attr('stroke-width', 1.5)
+      linkLabelBg.attr('fill', 'rgba(0,20,30,0.85)')
+      linkLabels.attr('fill', '#00ffcc')
       // 高亮对应的边
       link.filter(l => l === d).attr('stroke', '#3498db').attr('stroke-width', 3)
       d3.select(event.target).attr('fill', '#3498db')
@@ -698,13 +750,13 @@ const renderGraph = () => {
     .on('click', (event, d) => {
       event.stopPropagation()
       // 重置所有节点样式
-      node.attr('stroke', '#fff').attr('stroke-width', 2.5)
-      linkGroup.selectAll('path').attr('stroke', '#C0C0C0').attr('stroke-width', 1.5)
+      node.attr('stroke', 'rgba(0,255,200,0.8)').attr('stroke-width', 2)
+      linkGroup.selectAll('path').attr('stroke', 'rgba(0,255,200,0.4)').attr('stroke-width', 1.5)
       // 高亮选中节点
-      d3.select(event.target).attr('stroke', '#E91E63').attr('stroke-width', 4)
+      d3.select(event.target).attr('stroke', '#C9A84C').attr('stroke-width', 4)
       // 高亮与此节点相连的边
       link.filter(l => l.source.id === d.id || l.target.id === d.id)
-        .attr('stroke', '#E91E63')
+        .attr('stroke', '#C9A84C')
         .attr('stroke-width', 2.5)
       
       selectedItem.value = {
@@ -716,12 +768,12 @@ const renderGraph = () => {
     })
     .on('mouseenter', (event, d) => {
       if (!selectedItem.value || selectedItem.value.data?.uuid !== d.rawData.uuid) {
-        d3.select(event.target).attr('stroke', '#333').attr('stroke-width', 3)
+        d3.select(event.target).attr('stroke', '#ffffff').attr('stroke-width', 3)
       }
     })
     .on('mouseleave', (event, d) => {
       if (!selectedItem.value || selectedItem.value.data?.uuid !== d.rawData.uuid) {
-        d3.select(event.target).attr('stroke', '#fff').attr('stroke-width', 2.5)
+        d3.select(event.target).attr('stroke', 'rgba(0,255,200,0.8)').attr('stroke-width', 2)
       }
     })
 
@@ -731,7 +783,7 @@ const renderGraph = () => {
     .enter().append('text')
     .text(d => d.name.length > 8 ? d.name.substring(0, 8) + '…' : d.name)
     .attr('font-size', '11px')
-    .attr('fill', '#333')
+    .attr('fill', '#ffffff')
     .attr('font-weight', '500')
     .attr('dx', 14)
     .attr('dy', 4)
@@ -776,10 +828,10 @@ const renderGraph = () => {
   // 点击空白处关闭详情面板
   svg.on('click', () => {
     selectedItem.value = null
-    node.attr('stroke', '#fff').attr('stroke-width', 2.5)
-    linkGroup.selectAll('path').attr('stroke', '#C0C0C0').attr('stroke-width', 1.5)
-    linkLabelBg.attr('fill', 'rgba(255,255,255,0.95)')
-    linkLabels.attr('fill', '#666')
+    node.attr('stroke', 'rgba(0,255,200,0.8)').attr('stroke-width', 2)
+    linkGroup.selectAll('path').attr('stroke', 'rgba(0,255,200,0.4)').attr('stroke-width', 1.5)
+    linkLabelBg.attr('fill', 'rgba(0,20,30,0.85)')
+    linkLabels.attr('fill', '#00ffcc')
   })
 }
 
