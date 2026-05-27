@@ -1085,7 +1085,7 @@ onUnmounted(() => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #FAFAFA;
+  background: #0a1520;
   font-family: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
 }
 
@@ -1100,7 +1100,7 @@ onUnmounted(() => {
 
 /* Step Card */
 .step-card {
-  background: #FFF;
+  background: #050d13;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -1136,7 +1136,7 @@ onUnmounted(() => {
 
 .step-card.active .step-num,
 .step-card.completed .step-num {
-  color: #000;
+  color: #ffffff;
 }
 
 .step-title {
@@ -1155,7 +1155,7 @@ onUnmounted(() => {
 
 .badge.success { background: #E8F5E9; color: #2E7D32; }
 .badge.processing { background: #FF5722; color: #FFF; }
-.badge.pending { background: #F5F5F5; color: #999; }
+.badge.pending { background: #0a1520; color: rgba(0,255,200,0.5); }
 .badge.accent { background: #E3F2FD; color: #1565C0; }
 
 .card-content {
@@ -1165,13 +1165,13 @@ onUnmounted(() => {
 .api-note {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  color: #999;
+  color: rgba(0,255,200,0.5);
   margin-bottom: 8px;
 }
 
 .description {
   font-size: 12px;
-  color: #666;
+  color: rgba(255,255,255,0.5);
   line-height: 1.5;
   margin-bottom: 16px;
 }
@@ -1204,8 +1204,8 @@ onUnmounted(() => {
 }
 
 .action-btn.secondary {
-  background: #F5F5F5;
-  color: #333;
+  background: #0a1520;
+  color: #ffffff;
 }
 
 .action-btn.secondary:hover:not(:disabled) {
@@ -1234,7 +1234,7 @@ onUnmounted(() => {
 
 /* Info Card */
 .info-card {
-  background: #F5F5F5;
+  background: #0a1520;
   border-radius: 6px;
   padding: 16px;
   margin-top: 16px;
@@ -1254,7 +1254,7 @@ onUnmounted(() => {
 
 .info-label {
   font-size: 12px;
-  color: #666;
+  color: rgba(255,255,255,0.5);
 }
 
 .info-value {
@@ -1285,13 +1285,13 @@ onUnmounted(() => {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: #ffffff;
   font-family: 'JetBrains Mono', monospace;
 }
 
 .stat-label {
   font-size: 9px;
-  color: #999;
+  color: rgba(0,255,200,0.5);
   text-transform: uppercase;
   margin-top: 4px;
   display: block;
@@ -1314,7 +1314,7 @@ onUnmounted(() => {
 .preview-title {
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: rgba(255,255,255,0.5);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -1342,7 +1342,7 @@ onUnmounted(() => {
 }
 
 .profile-card {
-  background: #FAFAFA;
+  background: #0a1520;
   border: 1px solid #E5E5E5;
   border-radius: 6px;
   padding: 14px;
@@ -1351,8 +1351,8 @@ onUnmounted(() => {
 }
 
 .profile-card:hover {
-  border-color: #999;
-  background: #FFF;
+  border-color: rgba(0,255,200,0.5);
+  background: #050d13;
 }
 
 .profile-header {
@@ -1365,13 +1365,13 @@ onUnmounted(() => {
 .profile-realname {
   font-size: 14px;
   font-weight: 700;
-  color: #000;
+  color: #ffffff;
 }
 
 .profile-username {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: #999;
+  color: rgba(0,255,200,0.5);
 }
 
 .profile-meta {
@@ -1380,7 +1380,7 @@ onUnmounted(() => {
 
 .profile-profession {
   font-size: 11px;
-  color: #666;
+  color: rgba(255,255,255,0.5);
   background: #F0F0F0;
   padding: 2px 8px;
   border-radius: 3px;
@@ -1413,7 +1413,7 @@ onUnmounted(() => {
 
 .topic-more {
   font-size: 10px;
-  color: #999;
+  color: rgba(0,255,200,0.5);
   padding: 2px 6px;
 }
 
@@ -1445,7 +1445,7 @@ onUnmounted(() => {
 .config-block-title {
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: rgba(255,255,255,0.5);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -1560,8 +1560,8 @@ onUnmounted(() => {
 }
 
 .agent-card:hover {
-  border-color: #999;
-  background: #FFF;
+  border-color: rgba(0,255,200,0.5);
+  background: #050d13;
 }
 
 /* Agent Card Header */
@@ -1759,7 +1759,7 @@ onUnmounted(() => {
 .platform-name {
   font-size: 13px;
   font-weight: 600;
-  color: #333;
+  color: #ffffff;
 }
 
 .platform-params {
@@ -1822,7 +1822,7 @@ onUnmounted(() => {
 }
 
 .profile-modal {
-  background: #FFF;
+  background: #050d13;
   border-radius: 16px;
   width: 90%;
   max-width: 600px;
@@ -1838,7 +1838,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: flex-start;
   padding: 24px;
-  background: #FFF;
+  background: #050d13;
   border-bottom: 1px solid #F0F0F0;
 }
 
@@ -1856,19 +1856,19 @@ onUnmounted(() => {
 .modal-realname {
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: #ffffff;
 }
 
 .modal-username {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  color: #999;
+  color: rgba(0,255,200,0.5);
 }
 
 .modal-profession {
   font-size: 12px;
-  color: #666;
-  background: #F5F5F5;
+  color: rgba(255,255,255,0.5);
+  background: #0a1520;
   padding: 4px 10px;
   border-radius: 4px;
   display: inline-block;
@@ -1880,7 +1880,7 @@ onUnmounted(() => {
   height: 32px;
   border: none;
   background: none;
-  color: #999;
+  color: rgba(0,255,200,0.5);
   border-radius: 50%;
   font-size: 24px;
   cursor: pointer;
@@ -1893,7 +1893,7 @@ onUnmounted(() => {
 }
 
 .close-btn:hover {
-  color: #333;
+  color: #ffffff;
 }
 
 .modal-body {
@@ -1921,7 +1921,7 @@ onUnmounted(() => {
 
 .info-label {
   font-size: 11px;
-  color: #999;
+  color: rgba(0,255,200,0.5);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
@@ -1930,7 +1930,7 @@ onUnmounted(() => {
 .info-value {
   font-size: 15px;
   font-weight: 600;
-  color: #333;
+  color: #ffffff;
 }
 
 .info-value.mbti {
@@ -1947,7 +1947,7 @@ onUnmounted(() => {
   display: block;
   font-size: 11px;
   font-weight: 600;
-  color: #999;
+  color: rgba(0,255,200,0.5);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
@@ -1955,7 +1955,7 @@ onUnmounted(() => {
 
 .section-bio {
   font-size: 14px;
-  color: #333;
+  color: #ffffff;
   line-height: 1.6;
   margin: 0;
   padding: 16px;
@@ -2004,14 +2004,14 @@ onUnmounted(() => {
 
 .dimension-card:hover {
   background: #F0F0F0;
-  border-left-color: #999;
+  border-left-color: rgba(0,255,200,0.5);
 }
 
 .dim-title {
   display: block;
   font-size: 12px;
   font-weight: 700;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 4px;
 }
 
@@ -2094,12 +2094,12 @@ onUnmounted(() => {
 }
 
 .log-time {
-  color: #666;
+  color: rgba(255,255,255,0.5);
   min-width: 75px;
 }
 
 .log-msg {
-  color: #CCC;
+  color: rgba(255,255,255,0.2);
   word-break: break-all;
 }
 
@@ -2128,14 +2128,14 @@ onUnmounted(() => {
   display: block;
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: rgba(255,255,255,0.5);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
 }
 
 .narrative-box {
-  background: #FFFFFF;
+  background: #050d13;
   padding: 20px 24px;
   border-radius: 12px;
   border: 1px solid #EEF2F6;
@@ -2147,7 +2147,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #666;
+  color: rgba(255,255,255,0.5);
   font-size: 13px;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
@@ -2174,7 +2174,7 @@ onUnmounted(() => {
 }
 
 .topics-section {
-  background: #FFF;
+  background: #050d13;
 }
 
 .hot-topics-grid {
@@ -2186,7 +2186,7 @@ onUnmounted(() => {
 .hot-topic-tag {
   font-size: 12px;
   color:rgba(255, 86, 34, 0.88);
-  background: #FFF3E0;
+  background: #050d133E0;
   padding: 4px 10px;
   border-radius: 12px;
   font-weight: 500;
@@ -2194,7 +2194,7 @@ onUnmounted(() => {
 
 .hot-topic-more {
   font-size: 11px;
-  color: #999;
+  color: rgba(0,255,200,0.5);
   padding: 4px 6px;
 }
 
@@ -2242,7 +2242,7 @@ onUnmounted(() => {
 .post-role {
   font-size: 11px;
   font-weight: 700;
-  color: #333;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
@@ -2256,7 +2256,7 @@ onUnmounted(() => {
 .post-username {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  color: #666;
+  color: rgba(255,255,255,0.5);
   line-height: 1;
   vertical-align: baseline;
 }
@@ -2348,7 +2348,7 @@ onUnmounted(() => {
   top: 2px;
   width: 16px;
   height: 16px;
-  background: #FFF;
+  background: #050d13;
   border-radius: 50%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -2394,12 +2394,12 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 24px;
   font-weight: 700;
-  color: #000;
+  color: #ffffff;
 }
 
 .val-unit {
   font-size: 12px;
-  color: #666;
+  color: rgba(255,255,255,0.5);
   font-weight: 500;
 }
 
@@ -2435,7 +2435,7 @@ onUnmounted(() => {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #FFF;
+  background: #050d13;
   border: 2px solid #000;
   cursor: pointer;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
@@ -2469,11 +2469,11 @@ onUnmounted(() => {
 }
 
 .mark-recommend:hover {
-  color: #000;
+  color: #ffffff;
 }
 
 .mark-recommend.active {
-  color: #000;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -2528,7 +2528,7 @@ onUnmounted(() => {
   font-size: 11px;
   font-weight: 500;
   color: #64748B;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E2E8F0;
   padding: 3px 8px;
   border-radius: 6px;
@@ -2551,7 +2551,7 @@ onUnmounted(() => {
 .highlight-tip {
   margin-top: 4px !important;
   font-size: 12px !important;
-  color: #000 !important;
+  color: #ffffff !important;
   font-weight: 500;
   cursor: pointer;
 }

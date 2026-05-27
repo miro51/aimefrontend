@@ -984,7 +984,7 @@ watch(() => props.simulationId, (newId) => {
 .left-panel.report-style {
   width: 45%;
   min-width: 450px;
-  background: #FFFFFF;
+  background: #050d13;
   border-right: 1px solid #E5E7EB;
   overflow-y: auto;
   display: flex;
@@ -1053,7 +1053,7 @@ watch(() => props.simulationId, (newId) => {
   font-family: 'Times New Roman', Times, serif;
   font-size: 36px;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff827;
   line-height: 1.2;
   margin: 0 0 16px 0;
   letter-spacing: -0.02em;
@@ -1130,7 +1130,7 @@ watch(() => props.simulationId, (newId) => {
   font-family: 'Times New Roman', Times, serif;
   font-size: 24px;
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
   margin: 0;
   transition: color 0.3s ease;
 }
@@ -1150,7 +1150,7 @@ watch(() => props.simulationId, (newId) => {
 
 .report-section-item.is-active .section-title,
 .report-section-item.is-completed .section-title {
-  color: #111827;
+  color: #ffffff827;
 }
 
 .section-body {
@@ -1174,7 +1174,7 @@ watch(() => props.simulationId, (newId) => {
 .generated-content :deep(.md-h3),
 .generated-content :deep(.md-h4) {
   font-family: 'Times New Roman', Times, serif;
-  color: #111827;
+  color: #ffffff827;
   margin-top: 1.5em;
   margin-bottom: 0.8em;
   font-weight: 700;
@@ -1216,7 +1216,7 @@ watch(() => props.simulationId, (newId) => {
 
 .generated-content :deep(strong) {
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
 }
 
 /* Loading State */
@@ -1304,7 +1304,7 @@ watch(() => props.simulationId, (newId) => {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
+  background: #050d13;
   overflow: hidden;
 }
 
@@ -1437,7 +1437,7 @@ watch(() => props.simulationId, (newId) => {
 .interaction-header {
   padding: 16px 24px;
   border-bottom: 1px solid #E5E7EB;
-  background: #FAFAFA;
+  background: #0a1520;
 }
 
 .tab-switcher {
@@ -1533,7 +1533,7 @@ watch(() => props.simulationId, (newId) => {
 .tools-card-toggle {
   width: 28px;
   height: 28px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-radius: 6px;
   cursor: pointer;
@@ -1572,7 +1572,7 @@ watch(() => props.simulationId, (newId) => {
   display: flex;
   gap: 10px;
   padding: 12px;
-  background: #FFFFFF;
+  background: #050d13;
   border-radius: 10px;
   border: 1px solid #E5E7EB;
   transition: all 0.2s ease;
@@ -1700,7 +1700,7 @@ watch(() => props.simulationId, (newId) => {
 .profile-card-toggle {
   width: 28px;
   height: 28px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-radius: 6px;
   cursor: pointer;
@@ -1742,7 +1742,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .profile-card-bio {
-  background: #FFFFFF;
+  background: #050d13;
   padding: 12px 14px;
   border-radius: 8px;
   border: 1px solid #E5E7EB;
@@ -1821,7 +1821,7 @@ watch(() => props.simulationId, (newId) => {
   left: 50%;
   transform: translateX(-50%);
   min-width: 240px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-radius: 12px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -2473,7 +2473,7 @@ watch(() => props.simulationId, (newId) => {
   align-items: flex-start;
   gap: 8px;
   padding: 12px 14px;
-  background: #FFFFFF;
+  background: #050d13;
   border-radius: 8px;
   margin-bottom: 12px;
   font-size: 13px;

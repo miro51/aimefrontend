@@ -290,7 +290,7 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .step-card {
-  background: #FFF;
+  background: #050d13;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -326,7 +326,7 @@ watch(() => props.systemLogs.length, () => {
 
 .step-card.active .step-num,
 .step-card.completed .step-num {
-  color: #000;
+  color: #ffffff;
 }
 
 .step-title {
@@ -346,18 +346,18 @@ watch(() => props.systemLogs.length, () => {
 .badge.success { background: #E8F5E9; color: #2E7D32; }
 .badge.processing { background: #FF5722; color: #FFF; }
 .badge.accent { background: #FF5722; color: #FFF; }
-.badge.pending { background: #F5F5F5; color: #999; }
+.badge.pending { background: #0a1520; color: rgba(0,255,200,0.5); }
 
 .api-note {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  color: #999;
+  color: rgba(0,255,200,0.5);
   margin-bottom: 8px;
 }
 
 .description {
   font-size: 12px;
-  color: #666;
+  color: rgba(255,255,255,0.5);
   line-height: 1.5;
   margin-bottom: 16px;
 }
@@ -376,7 +376,7 @@ watch(() => props.systemLogs.length, () => {
 .tag-label {
   display: block;
   font-size: 10px;
-  color: #AAA;
+  color: rgba(255,255,255,0.3);
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -388,12 +388,12 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .entity-tag {
-  background: #F5F5F5;
+  background: #0a1520;
   border: 1px solid #EEE;
   padding: 4px 10px;
   border-radius: 4px;
   font-size: 11px;
-  color: #333;
+  color: #ffffff;
   font-family: 'JetBrains Mono', monospace;
   transition: all 0.2s;
 }
@@ -404,7 +404,7 @@ watch(() => props.systemLogs.length, () => {
 
 .entity-tag.clickable:hover {
     background: #E0E0E0;
-    border-color: #CCC;
+    border-color: rgba(255,255,255,0.2);
 }
 
 /* Ontology Detail Overlay */
@@ -433,8 +433,8 @@ watch(() => props.systemLogs.length, () => {
     justify-content: space-between;
     align-items: center;
     padding: 12px 16px;
-    border-bottom: 1px solid #EAEAEA;
-    background: #FAFAFA;
+    border-bottom: 1px solid rgba(0,255,200,0.1);
+    background: #0a1520;
 }
 
 .detail-title-group {
@@ -463,13 +463,13 @@ watch(() => props.systemLogs.length, () => {
     background: none;
     border: none;
     font-size: 18px;
-    color: #999;
+    color: rgba(0,255,200,0.5);
     cursor: pointer;
     line-height: 1;
 }
 
 .close-btn:hover {
-    color: #333;
+    color: #ffffff;
 }
 
 .detail-body {
@@ -495,7 +495,7 @@ watch(() => props.systemLogs.length, () => {
     display: block;
     font-size: 10px;
     font-weight: 600;
-    color: #AAA;
+    color: rgba(255,255,255,0.3);
     margin-bottom: 8px;
 }
 
@@ -519,11 +519,11 @@ watch(() => props.systemLogs.length, () => {
 .attr-name {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 600;
-    color: #000;
+    color: #ffffff;
 }
 
 .attr-type {
-    color: #999;
+    color: rgba(0,255,200,0.5);
     font-size: 10px;
 }
 
@@ -541,7 +541,7 @@ watch(() => props.systemLogs.length, () => {
 
 .example-tag {
     font-size: 11px;
-    background: #FFF;
+    background: #050d13;
     border: 1px solid #E0E0E0;
     padding: 3px 8px;
     border-radius: 12px;
@@ -554,18 +554,18 @@ watch(() => props.systemLogs.length, () => {
     gap: 8px;
     font-size: 11px;
     padding: 6px;
-    background: #F5F5F5;
+    background: #0a1520;
     border-radius: 4px;
     font-family: 'JetBrains Mono', monospace;
 }
 
 .conn-node {
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
 }
 
 .conn-arrow {
-    color: #BBB;
+    color: rgba(255,255,255,0.25);
 }
 
 /* Step 02 Stats */
@@ -586,13 +586,13 @@ watch(() => props.systemLogs.length, () => {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: #ffffff;
   font-family: 'JetBrains Mono', monospace;
 }
 
 .stat-label {
   font-size: 9px;
-  color: #999;
+  color: rgba(0,255,200,0.5);
   text-transform: uppercase;
   margin-top: 4px;
   display: block;
@@ -687,12 +687,12 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .log-time {
-  color: #666;
+  color: rgba(255,255,255,0.5);
   min-width: 75px;
 }
 
 .log-msg {
-  color: #CCC;
+  color: rgba(255,255,255,0.2);
   word-break: break-all;
 }
 </style>

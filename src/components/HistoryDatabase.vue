@@ -666,7 +666,7 @@ onUnmounted(() => {
 .project-card {
   position: absolute;
   width: 280px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-radius: 0;
   padding: 14px;
@@ -884,7 +884,7 @@ onUnmounted(() => {
   font-family: 'Inter', -apple-system, sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff827;
   margin: 0 0 6px 0;
   line-height: 1.4;
   white-space: nowrap;
@@ -958,7 +958,7 @@ onUnmounted(() => {
   left: 0;
   height: 2px;
   width: 0;
-  background-color: #000;
+  background-color: #ffffff;
   transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   z-index: 20;
 }
@@ -1027,7 +1027,7 @@ onUnmounted(() => {
 }
 
 .modal-content {
-  background: #FFFFFF;
+  background: #050d13;
   width: 560px;
   max-width: 90vw;
   max-height: 85vh;
@@ -1073,7 +1073,7 @@ onUnmounted(() => {
   align-items: center;
   padding: 20px 32px;
   border-bottom: 1px solid #F3F4F6;
-  background: #FFFFFF;
+  background: #050d13;
 }
 
 .modal-title-section {
@@ -1086,7 +1086,7 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 1rem;
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
   letter-spacing: 0.5px;
 }
 
@@ -1130,7 +1130,7 @@ onUnmounted(() => {
 
 .modal-close:hover {
   background: #F3F4F6;
-  color: #111827;
+  color: #ffffff827;
 }
 
 /* 弹窗内容 */
@@ -1199,7 +1199,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 10px 14px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-radius: 6px;
   transition: all 0.2s ease;
@@ -1235,7 +1235,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 16px;
   padding: 10px 32px 0;
-  background: #FFFFFF;
+  background: #050d13;
 }
 
 .divider-line {
@@ -1258,7 +1258,7 @@ onUnmounted(() => {
   display: flex;
   gap: 16px;
   padding: 20px 32px;
-  background: #FFFFFF;
+  background: #050d13;
 }
 
 .modal-btn {
@@ -1270,7 +1270,7 @@ onUnmounted(() => {
   padding: 16px;
   border: 1px solid #E5E7EB;
   border-radius: 8px;
-  background: #FFFFFF;
+  background: #050d13;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
@@ -1278,7 +1278,7 @@ onUnmounted(() => {
 }
 
 .modal-btn:hover:not(:disabled) {
-  border-color: #000000;
+  border-color: #ffffff000;
   transform: translateY(-2px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -1317,7 +1317,7 @@ onUnmounted(() => {
 .modal-btn.btn-report .btn-icon { color: #10B981; }
 
 .modal-btn:hover:not(:disabled) .btn-text {
-  color: #111827;
+  color: #ffffff827;
 }
 
 /* 不可回放提示 */
@@ -1326,7 +1326,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   padding: 0 32px 20px;
-  background: #FFFFFF;
+  background: #050d13;
 }
 
 .hint-text {

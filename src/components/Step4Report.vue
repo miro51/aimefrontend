@@ -2225,7 +2225,7 @@ watch(() => props.reportId, (newId) => {
   align-items: center;
   gap: 10px;
   padding: 14px 20px;
-  background: #FFFFFF;
+  background: #050d13;
   border-bottom: 1px solid #E5E7EB;
   font-size: 13px;
   font-weight: 600;
@@ -2286,7 +2286,7 @@ watch(() => props.reportId, (newId) => {
 
 /* Panel header status variants */
 .panel-header--active {
-  background: #FAFAFA;
+  background: #0a1520;
   border-color: #1F2937;
 }
 
@@ -2319,7 +2319,7 @@ watch(() => props.reportId, (newId) => {
 .left-panel.report-style {
   width: 45%;
   min-width: 450px;
-  background: #FFFFFF;
+  background: #050d13;
   border-right: 1px solid #E5E7EB;
   overflow-y: auto;
   display: flex;
@@ -2388,7 +2388,7 @@ watch(() => props.reportId, (newId) => {
   font-family: 'Times New Roman', Times, serif;
   font-size: 36px;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff827;
   line-height: 1.2;
   margin: 0 0 16px 0;
   letter-spacing: -0.02em;
@@ -2464,7 +2464,7 @@ watch(() => props.reportId, (newId) => {
   font-family: 'Times New Roman', Times, serif;
   font-size: 24px;
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
   margin: 0;
   transition: color 0.3s ease;
 }
@@ -2476,7 +2476,7 @@ watch(() => props.reportId, (newId) => {
 
 .report-section-item.is-active .section-title,
 .report-section-item.is-completed .section-title {
-  color: #111827;
+  color: #ffffff827;
 }
 
 .section-body {
@@ -2500,7 +2500,7 @@ watch(() => props.reportId, (newId) => {
 .generated-content :deep(.md-h3),
 .generated-content :deep(.md-h4) {
   font-family: 'Times New Roman', Times, serif;
-  color: #111827;
+  color: #ffffff827;
   margin-top: 1.5em;
   margin-bottom: 0.8em;
   font-weight: 700;
@@ -2543,7 +2543,7 @@ watch(() => props.reportId, (newId) => {
 
 .generated-content :deep(strong) {
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
 }
 
 /* Loading State */
@@ -2663,7 +2663,7 @@ watch(() => props.reportId, (newId) => {
 /* Right Panel */
 .right-panel {
   flex: 1;
-  background: #FFFFFF;
+  background: #050d13;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -2791,7 +2791,7 @@ watch(() => props.reportId, (newId) => {
   padding: 10px 12px;
   border: 1px solid var(--wf-divider);
   border-radius: 8px;
-  background: #FFFFFF;
+  background: #050d13;
 }
 
 .wf-step--active {
@@ -2862,7 +2862,7 @@ watch(() => props.reportId, (newId) => {
   font-family: 'Times New Roman', Times, serif;
   font-size: 13px;
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
   line-height: 1.35;
   min-width: 0;
   overflow: hidden;
@@ -2905,7 +2905,7 @@ watch(() => props.reportId, (newId) => {
   margin-bottom: 10px;
   border: 1px solid var(--wf-divider);
   border-radius: 8px;
-  background: #FFFFFF;
+  background: #050d13;
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
@@ -3304,7 +3304,7 @@ watch(() => props.reportId, (newId) => {
   white-space: pre-wrap;
   word-break: break-word;
   color: #374151;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   padding: 10px;
   border-radius: 6px;
@@ -3473,7 +3473,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.stat-box) {
   flex: 1;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-radius: 6px;
   padding: 10px 8px;
@@ -3484,7 +3484,7 @@ watch(() => props.reportId, (newId) => {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff827;
   font-family: 'JetBrains Mono', monospace;
 }
 
@@ -3527,7 +3527,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.expand-details) {
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   padding: 8px 14px;
   border-radius: 6px;
@@ -3545,7 +3545,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.detail-content) {
   margin-top: 14px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-radius: 8px;
   padding: 14px;
@@ -3635,7 +3635,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.chip-name) {
   font-size: 12px;
   font-weight: 500;
-  color: #111827;
+  color: #ffffff827;
 }
 
 :deep(.chip-type) {
@@ -3667,7 +3667,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.rel-node) {
   font-size: 12px;
   font-weight: 500;
-  color: #111827;
+  color: #ffffff827;
   background: #F3F4F6;
   padding: 4px 10px;
   border-radius: 4px;
@@ -3705,7 +3705,7 @@ watch(() => props.reportId, (newId) => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
   letter-spacing: -0.01em;
 }
 
@@ -3878,7 +3878,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.interview-display .profile-name) {
   font-size: 13px;
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
   margin-bottom: 2px;
 }
 
@@ -4054,12 +4054,12 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.interview-display .answer-text) {
   font-size: 13px;
-  color: #111827;
+  color: #ffffff827;
   line-height: 1.6;
 }
 
 :deep(.interview-display .answer-text strong) {
-  color: #111827;
+  color: #ffffff827;
   font-weight: 600;
 }
 
@@ -4112,7 +4112,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.interview-display .quote-item) {
   margin: 0;
   padding: 10px 12px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-radius: 6px;
   font-size: 12px;
@@ -4153,7 +4153,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.interview-display .summary-content h5) {
   margin: 12px 0 8px 0;
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
 }
 
 :deep(.interview-display .summary-content h2) {
@@ -4175,7 +4175,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.interview-display .summary-content strong) {
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
 }
 
 :deep(.interview-display .summary-content em) {
@@ -4291,7 +4291,7 @@ watch(() => props.reportId, (newId) => {
   display: flex;
   gap: 2px;
   padding: 8px 12px;
-  background: #FAFAFA;
+  background: #0a1520;
   border: 1px solid #E5E7EB;
   border-top: none;
 }
@@ -4317,7 +4317,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.insight-tab.active) {
-  background: #FFFFFF;
+  background: #050d13;
   color: #7C3AED;
   border-color: #C4B5FD;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -4326,7 +4326,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.insight-content) {
   padding: 12px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-top: none;
   border-radius: 0 0 8px 8px;
@@ -4418,7 +4418,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.insight-display .entity-tag .entity-name) {
   font-size: 12px;
   font-weight: 500;
-  color: #111827;
+  color: #ffffff827;
 }
 
 :deep(.insight-display .entity-tag .entity-type) {
@@ -4456,7 +4456,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.insight-display .entity-card .entity-name) {
   font-size: 13px;
   font-weight: 600;
-  color: #111827;
+  color: #ffffff827;
 }
 
 :deep(.insight-display .entity-card .entity-type) {
@@ -4500,7 +4500,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.insight-display .rel-source),
 :deep(.insight-display .rel-target) {
   padding: 4px 8px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #D1D5DB;
   border-radius: 4px;
   font-size: 11px;
@@ -4666,7 +4666,7 @@ watch(() => props.reportId, (newId) => {
   display: flex;
   gap: 2px;
   padding: 8px 12px;
-  background: #FAFAFA;
+  background: #0a1520;
   border: 1px solid #E5E7EB;
   border-top: none;
 }
@@ -4692,7 +4692,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.panorama-tab.active) {
-  background: #FFFFFF;
+  background: #050d13;
   color: #2563EB;
   border-color: #93C5FD;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -4701,7 +4701,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.panorama-content) {
   padding: 12px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-top: none;
   border-radius: 0 0 8px 8px;
@@ -4902,7 +4902,7 @@ watch(() => props.reportId, (newId) => {
   display: flex;
   gap: 2px;
   padding: 8px 12px;
-  background: #FAFAFA;
+  background: #0a1520;
   border: 1px solid #E5E7EB;
   border-top: none;
 }
@@ -4928,7 +4928,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.quicksearch-tab.active) {
-  background: #FFFFFF;
+  background: #050d13;
   color: #EA580C;
   border-color: #FDBA74;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -4937,7 +4937,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.quicksearch-content) {
   padding: 12px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #E5E7EB;
   border-top: none;
   border-radius: 0 0 8px 8px;
@@ -5035,7 +5035,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.quick-search-display .edge-source),
 :deep(.quick-search-display .edge-target) {
   padding: 4px 8px;
-  background: #FFFFFF;
+  background: #050d13;
   border: 1px solid #D1D5DB;
   border-radius: 4px;
   font-size: 11px;
@@ -5114,7 +5114,7 @@ watch(() => props.reportId, (newId) => {
   padding-bottom: 8px;
   margin-bottom: 8px;
   font-size: 10px;
-  color: #666;
+  color: rgba(255,255,255,0.5);
 }
 
 .log-title {
@@ -5140,7 +5140,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 .log-msg {
-  color: #BBB;
+  color: rgba(255,255,255,0.25);
   word-break: break-all;
 }
 
