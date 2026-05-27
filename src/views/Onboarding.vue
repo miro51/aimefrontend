@@ -2,7 +2,7 @@
   <div class="onboarding">
     <div class="onboarding-card">
       <div class="logo-section">
-        <img src="/icon.png" alt="AiMe" class="logo" />
+        <img src="https://raw.githubusercontent.com/miro51/aimefrontend/master/public/icon.png" alt="AiMe" class="logo" />
         <h1>AiMe <span class="hanzi">智能</span></h1>
         <p class="subtitle">AI Prediction & Simulation Engine</p>
       </div>

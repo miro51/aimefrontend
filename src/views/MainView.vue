@@ -2,7 +2,7 @@
   <div class="main-view">
     <header class="app-header">
       <div class="header-left">
-        <img src="/icon.png" class="header-logo" />
+        <img src="https://raw.githubusercontent.com/miro51/aimefrontend/master/public/icon.png" class="header-logo" />
         <div class="brand" @click="router.push('/')">AiMe <span class="hanzi">智能</span></div>
       </div>
       <div class="header-center">

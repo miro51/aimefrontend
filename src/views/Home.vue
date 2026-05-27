@@ -5,7 +5,7 @@
 
     <nav class="navbar">
       <div class="nav-brand">
-        <img src="/icon.png" class="nav-logo" />
+        <img src="https://raw.githubusercontent.com/miro51/aimefrontend/master/public/icon.png" class="nav-logo" />
         <span class="brand-text">AiMe <span class="hanzi">智能</span></span>
       </div>
       <div class="nav-links">
@@ -43,7 +43,7 @@
         <div class="hero-right">
           <div class="logo-container">
             <div class="logo-glow"></div>
-            <img src="/icon.png" alt="AiMe Logo" class="hero-logo" />
+            <img src="https://raw.githubusercontent.com/miro51/aimefrontend/master/public/icon.png" alt="AiMe Logo" class="hero-logo" />
           </div>
           <button class="scroll-down-btn" @click="scrollToBottom">↓</button>
         </div>
