@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "github": "Kunjungi Github Kami"
+  },
+  "home": {
+    "tag": "Mesin Kecerdasan Kolektif Universal",
+    "version": "v0.1-Preview",
+    "title1": "Unggah Laporan Apapun",
+    "title2": "Simulasikan Masa Depan",
+    "desc1": "Hanya dengan satu paragraf teks, AiMe dapat secara otomatis membangun dunia paralel dengan jutaan Agent berdasarkan data nyata. Injeksikan variabel dari sudut pandang dewa, temukan solusi optimal dalam interaksi kelompok yang kompleks.",
+    "slogan": "Biarkan masa depan disimulasikan dalam kelompok Agent, biarkan keputusan menang setelah ratusan pertempuran",
+    "systemStatus": "Status Sistem",
+    "ready": "Siap",
+    "readyDesc": "Mesin prediksi siap, unggah beberapa data tidak terstruktur untuk menginisialisasi urutan simulasi",
+    "lowCost": "Biaya Rendah",
+    "lowCostDesc": "Rata-rata $5 per simulasi",
+    "highAvail": "Ketersediaan Tinggi",
+    "highAvailDesc": "Simulasi hingga jutaan Agent",
+    "workflow": "Urutan Alur Kerja",
+    "step1Title": "Bangun Graf",
+    "step1Desc": "Ekstraksi seed nyata & injeksi memori individu & grup & bangun GraphRAG",
+    "step2Title": "Setup Lingkungan",
+    "step2Desc": "Ekstraksi relasi entitas & buat persona & konfigurasi parameter simulasi Agent",
+    "step3Title": "Mulai Simulasi",
+    "step3Desc": "Simulasi paralel dua platform & parse kebutuhan prediksi otomatis & update memori sekuensial",
+    "step4Title": "Buat Laporan",
+    "step4Desc": "ReportAgent memiliki toolset lengkap untuk interaksi mendalam dengan lingkungan pasca-simulasi",
+    "step5Title": "Interaksi Mendalam",
+    "step5Desc": "Berbicara dengan siapa saja di dunia simulasi & berbicara dengan ReportAgent",
+    "seedLabel": "01 / Seed Nyata",
+    "seedFormat": "Format didukung: PDF, MD, TXT",
+    "uploadTitle": "Seret & Lepas File",
+    "uploadHint": "atau klik untuk membuka file sistem",
+    "inputParams": "Input Parameter",
+    "promptLabel": ">_ 02 / Prompt Simulasi",
+    "promptPlaceholder": "// Masukkan kebutuhan simulasi atau prediksi dalam bahasa natural (contoh: Jika harga BBM naik 50%, bagaimana reaksi masyarakat Indonesia?)",
+    "engine": "Mesin: AiMe 智能-V1.0",
+    "startBtn": "Jalankan Mesin",
+    "loading": "Menginisialisasi..."
+  },
+  "mainView": {
+    "graph": "Graf",
+    "split": "Split",
+    "workbench": "Workbench",
+    "step1": "Bangun Graf",
+    "step2": "Setup Lingkungan",
+    "step3": "Mulai Simulasi",
+    "step4": "Buat Laporan",
+    "step5": "Interaksi Mendalam"
+  }
+}

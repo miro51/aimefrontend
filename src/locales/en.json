@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "github": "Visit our Github"
+  },
+  "home": {
+    "tag": "Simple & Universal Swarm Intelligence Engine",
+    "version": "v0.1-Preview",
+    "title1": "Upload Any Report",
+    "title2": "Simulate the Future",
+    "desc1": "With just a paragraph of text, AiMe can automatically build a parallel world with millions of Agents based on real-world seeds. Inject variables from a god's-eye view, find the optimal solution in complex group interactions.",
+    "slogan": "Let the future be rehearsed in Agent swarms, let decisions win after a hundred battles",
+    "systemStatus": "System Status",
+    "ready": "Ready",
+    "readyDesc": "Prediction engine on standby, upload multiple unstructured data to initialize simulation sequence",
+    "lowCost": "Low Cost",
+    "lowCostDesc": "Average $5 per simulation",
+    "highAvail": "High Availability",
+    "highAvailDesc": "Simulate up to millions of Agents",
+    "workflow": "Workflow Sequence",
+    "step1Title": "Build Graph",
+    "step1Desc": "Real seed extraction & individual/group memory injection & GraphRAG construction",
+    "step2Title": "Setup Environment",
+    "step2Desc": "Entity relation extraction & persona generation & configure Agent simulation parameters",
+    "step3Title": "Start Simulation",
+    "step3Desc": "Dual-platform parallel simulation & auto-parse prediction requirements & dynamic sequential memory update",
+    "step4Title": "Generate Report",
+    "step4Desc": "ReportAgent has a rich toolset for deep interaction with the post-simulation environment",
+    "step5Title": "Deep Interaction",
+    "step5Desc": "Chat with anyone in the simulated world & chat with ReportAgent",
+    "seedLabel": "01 / Real Seed",
+    "seedFormat": "Supported: PDF, MD, TXT",
+    "uploadTitle": "Drag & Drop Files",
+    "uploadHint": "or click to browse file system",
+    "inputParams": "Input Parameters",
+    "promptLabel": ">_ 02 / Simulation Prompt",
+    "promptPlaceholder": "// Enter simulation or prediction requirements in natural language (e.g. If a university cancels a student's punishment, what public reaction will follow?)",
+    "engine": "Engine: AiMe 智能-V1.0",
+    "startBtn": "Start Engine",
+    "loading": "Initializing..."
+  },
+  "mainView": {
+    "graph": "Graph",
+    "split": "Split",
+    "workbench": "Workbench",
+    "step1": "Build Graph",
+    "step2": "Setup Env",
+    "step3": "Simulate",
+    "step4": "Report",
+    "step5": "Interact"
+  }
+}
