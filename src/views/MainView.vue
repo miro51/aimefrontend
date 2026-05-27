@@ -2,18 +2,21 @@
   <div class="main-view">
     <header class="app-header">
       <div class="header-left">
-        <div class="brand" @click="router.push('/')">AiMe 智能</div>
+        <img src="/icon.png" class="header-logo" />
+        <div class="brand" @click="router.push('/')">AiMe <span class="hanzi">智能</span></div>
       </div>
       <div class="header-center">
         <div class="view-switcher">
-          <button v-for="mode in ['graph', 'split', 'workbench']" :key="mode" class="switch-btn" :class="{ active: viewMode === mode }" @click="viewMode = mode">
+          <button v-for="mode in ['graph', 'split', 'workbench']" :key="mode"
+            class="switch-btn" :class="{ active: viewMode === mode }" @click="viewMode = mode">
             {{ t(`mainView.${mode}`) }}
           </button>
         </div>
       </div>
       <div class="header-right">
         <div class="lang-toggle">
-          <button v-for="lang in ['id', 'en', 'zh']" :key="lang" class="lang-btn" :class="{ active: locale === lang }" @click="locale = lang">
+          <button v-for="lang in ['id', 'en', 'zh']" :key="lang"
+            class="lang-btn" :class="{ active: locale === lang }" @click="locale = lang">
             {{ lang.toUpperCase() }}
           </button>
         </div>
@@ -31,11 +34,17 @@
 
     <main class="content-area">
       <div class="panel-wrapper left" :style="leftPanelStyle">
-        <GraphPanel :graphData="graphData" :loading="graphLoading" :currentPhase="currentPhase" @refresh="refreshGraph" @toggle-maximize="toggleMaximize('graph')" />
+        <GraphPanel :graphData="graphData" :loading="graphLoading" :currentPhase="currentPhase"
+          @refresh="refreshGraph" @toggle-maximize="toggleMaximize('graph')" />
       </div>
       <div class="panel-wrapper right" :style="rightPanelStyle">
-        <Step1GraphBuild v-if="currentStep === 1" :currentPhase="currentPhase" :projectData="projectData" :ontologyProgress="ontologyProgress" :buildProgress="buildProgress" :graphData="graphData" :systemLogs="systemLogs" @next-step="handleNextStep" />
-        <Step2EnvSetup v-else-if="currentStep === 2" :projectData="projectData" :graphData="graphData" :systemLogs="systemLogs" @go-back="handleGoBack" @next-step="handleNextStep" @add-log="addLog" />
+        <Step1GraphBuild v-if="currentStep === 1" :currentPhase="currentPhase"
+          :projectData="projectData" :ontologyProgress="ontologyProgress"
+          :buildProgress="buildProgress" :graphData="graphData" :systemLogs="systemLogs"
+          @next-step="handleNextStep" />
+        <Step2EnvSetup v-else-if="currentStep === 2" :projectData="projectData"
+          :graphData="graphData" :systemLogs="systemLogs"
+          @go-back="handleGoBack" @next-step="handleNextStep" @add-log="addLog" />
       </div>
     </main>
   </div>
@@ -92,11 +101,11 @@ const addLog = (msg) => {
 }
 
 const toggleMaximize = (target) => { viewMode.value = viewMode.value === target ? 'split' : target }
-const handleNextStep = (params = {}) => { if (currentStep.value < 5) { currentStep.value++; addLog(`Step ${currentStep.value}`); if (currentStep.value === 3 && params.maxRounds) addLog(`Rounds: ${params.maxRounds}`) } }
+const handleNextStep = (params = {}) => { if (currentStep.value < 5) { currentStep.value++; addLog(`Step ${currentStep.value}`) } }
 const handleGoBack = () => { if (currentStep.value > 1) { currentStep.value--; addLog(`Back to Step ${currentStep.value}`) } }
 
 const initProject = async () => {
-  addLog('Project view initialized.')
+  addLog('Project initialized.')
   if (currentProjectId.value === 'new') await handleNewProject()
   else await loadProject()
 }
@@ -127,7 +136,7 @@ const loadProject = async () => {
     loading.value = true; addLog(`Loading project ${currentProjectId.value}...`)
     const res = await getProject(currentProjectId.value)
     if (res.success) {
-      projectData.value = res.data; updatePhaseByStatus(res.data.status); addLog(`Status: ${res.data.status}`)
+      projectData.value = res.data; updatePhaseByStatus(res.data.status)
       if (res.data.status === 'ontology_generated' && !res.data.graph_id) await startBuildGraph()
       else if (res.data.status === 'graph_building' && res.data.graph_build_task_id) { currentPhase.value = 1; startPollingTask(res.data.graph_build_task_id); startGraphPolling() }
       else if (res.data.status === 'graph_completed' && res.data.graph_id) { currentPhase.value = 2; await loadGraph(res.data.graph_id) }
@@ -144,9 +153,9 @@ const updatePhaseByStatus = (status) => {
 
 const startBuildGraph = async () => {
   try {
-    currentPhase.value = 1; buildProgress.value = { progress: 0, message: 'Starting...' }; addLog('Initiating graph build...')
+    currentPhase.value = 1; buildProgress.value = { progress: 0, message: 'Starting...' }
     const res = await buildGraph({ project_id: currentProjectId.value })
-    if (res.success) { addLog(`Task: ${res.data.task_id}`); startGraphPolling(); startPollingTask(res.data.task_id) }
+    if (res.success) { startGraphPolling(); startPollingTask(res.data.task_id) }
     else { error.value = res.error }
   } catch (err) { error.value = err.message }
 }
@@ -157,7 +166,7 @@ const fetchGraphData = async () => {
     const projRes = await getProject(currentProjectId.value)
     if (projRes.success && projRes.data.graph_id) {
       const gRes = await getGraphData(projRes.data.graph_id)
-      if (gRes.success) { graphData.value = gRes.data; addLog(`Graph: ${gRes.data.nodes?.length || 0} nodes`) }
+      if (gRes.success) { graphData.value = gRes.data }
     }
   } catch (err) { console.warn(err) }
 }
@@ -168,10 +177,9 @@ const pollTaskStatus = async (taskId) => {
     const res = await getTaskStatus(taskId)
     if (res.success) {
       const task = res.data
-      if (task.message && task.message !== buildProgress.value?.message) addLog(task.message)
       buildProgress.value = { progress: task.progress || 0, message: task.message }
       if (task.status === 'completed') {
-        addLog('Build completed.'); stopPolling(); stopGraphPolling(); currentPhase.value = 2
+        stopPolling(); stopGraphPolling(); currentPhase.value = 2
         const projRes = await getProject(currentProjectId.value)
         if (projRes.success && projRes.data.graph_id) { projectData.value = projRes.data; await loadGraph(projRes.data.graph_id) }
       } else if (task.status === 'failed') { stopPolling(); error.value = task.error }
@@ -180,15 +188,15 @@ const pollTaskStatus = async (taskId) => {
 }
 
 const loadGraph = async (graphId) => {
-  graphLoading.value = true; addLog(`Loading graph: ${graphId}`)
+  graphLoading.value = true
   try {
     const res = await getGraphData(graphId)
-    if (res.success) { graphData.value = res.data; addLog('Graph loaded.') }
+    if (res.success) { graphData.value = res.data }
   } catch (e) { addLog(`Error: ${e.message}`) }
   finally { graphLoading.value = false }
 }
 
-const refreshGraph = () => { if (projectData.value?.graph_id) { addLog('Manual refresh.'); loadGraph(projectData.value.graph_id) } }
+const refreshGraph = () => { if (projectData.value?.graph_id) loadGraph(projectData.value.graph_id) }
 const stopPolling = () => { if (pollTimer) { clearInterval(pollTimer); pollTimer = null } }
 const stopGraphPolling = () => { if (graphPollTimer) { clearInterval(graphPollTimer); graphPollTimer = null } }
 
@@ -197,28 +205,183 @@ onUnmounted(() => { stopPolling(); stopGraphPolling() })
 </script>
 
 <style scoped>
-.main-view { height: 100vh; display: flex; flex-direction: column; background: #FFF; overflow: hidden; font-family: 'Space Grotesk', sans-serif; }
-.app-header { height: 60px; border-bottom: 1px solid #EAEAEA; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: #FFF; z-index: 100; position: relative; }
-.header-center { position: absolute; left: 50%; transform: translateX(-50%); }
-.brand { font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 18px; letter-spacing: 1px; cursor: pointer; }
-.view-switcher { display: flex; background: #F5F5F5; padding: 4px; border-radius: 6px; gap: 4px; }
-.switch-btn { border: none; background: transparent; padding: 6px 16px; font-size: 12px; font-weight: 600; color: #666; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
-.switch-btn.active { background: #FFF; color: #000; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-.header-right { display: flex; align-items: center; gap: 12px; }
-.lang-toggle { display: flex; gap: 2px; background: #F5F5F5; padding: 3px; border-radius: 6px; }
-.lang-btn { border: none; background: transparent; color: #666; padding: 3px 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; cursor: pointer; border-radius: 4px; transition: all 0.2s; }
-.lang-btn.active { background: #FF4500; color: white; }
-.workflow-step { display: flex; align-items: center; gap: 8px; font-size: 14px; }
-.step-num { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #999; }
-.step-name { font-weight: 700; color: #000; }
-.step-divider { width: 1px; height: 14px; background: #E0E0E0; }
-.status-indicator { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #666; }
-.dot { width: 8px; height: 8px; border-radius: 50%; background: #CCC; }
-.status-indicator.processing .dot { background: #FF5722; animation: pulse 1s infinite; }
-.status-indicator.completed .dot { background: #4CAF50; }
-.status-indicator.error .dot { background: #F44336; }
-@keyframes pulse { 50% { opacity: 0.5; } }
-.content-area { flex: 1; display: flex; position: relative; overflow: hidden; }
-.panel-wrapper { height: 100%; overflow: hidden; transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease, transform 0.3s ease; }
-.panel-wrapper.left { border-right: 1px solid #EAEAEA; }
+.main-view {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #050d13;
+  overflow: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.app-header {
+  height: 60px;
+  border-bottom: 1px solid rgba(0,255,200,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(5,13,19,0.98);
+  z-index: 100;
+  position: relative;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.brand {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.hanzi { color: #C9A84C; }
+
+.view-switcher {
+  display: flex;
+  background: rgba(0,255,200,0.05);
+  padding: 3px;
+  border-radius: 6px;
+  gap: 2px;
+  border: 1px solid rgba(0,255,200,0.1);
+}
+
+.switch-btn {
+  border: none;
+  background: transparent;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(0,255,200,0.4);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.switch-btn.active {
+  background: rgba(0,255,200,0.15);
+  color: #00ffcc;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-toggle {
+  display: flex;
+  gap: 2px;
+  background: rgba(0,255,200,0.05);
+  padding: 3px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,255,200,0.1);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: rgba(0,255,200,0.4);
+  padding: 3px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.lang-btn.active {
+  background: rgba(0,255,200,0.15);
+  color: #00ffcc;
+}
+
+.workflow-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: rgba(0,255,200,0.4);
+}
+
+.step-name {
+  font-weight: 700;
+  color: #fff;
+}
+
+.step-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(0,255,200,0.15);
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0,255,200,0.3);
+}
+
+.status-indicator.processing .dot {
+  background: #00ffcc;
+  animation: pulse 1s infinite;
+  box-shadow: 0 0 6px #00ffcc;
+}
+
+.status-indicator.completed .dot {
+  background: #C9A84C;
+  box-shadow: 0 0 6px #C9A84C;
+}
+
+.status-indicator.error .dot { background: #ff4444; }
+
+@keyframes pulse { 50% { opacity: 0.4; } }
+
+.content-area {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-wrapper {
+  height: 100%;
+  overflow: hidden;
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease, transform 0.3s ease;
+}
+
+.panel-wrapper.left {
+  border-right: 1px solid rgba(0,255,200,0.1);
+}
 </style>
